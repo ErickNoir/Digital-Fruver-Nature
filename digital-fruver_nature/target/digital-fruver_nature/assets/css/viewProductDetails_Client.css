@@ -1,0 +1,583 @@
+/*------------------------------Estilos Generales------------------------------*/
+
+/*----------Colores----------*/
+:root{
+    --fondo: #F4FFE3;
+    --fondoOscuro: #101F0D;
+    --verde: #407b33;
+    --verdeOscuro: #203d1a;
+    --verdeClaro: #779a6a;
+    --verdeBlanco: #caddbb;
+
+    --verdeNeonOscuro: #00BF63;
+
+    --azulNeon: #07F5CB;
+    --azul: dodgerblue;
+
+    --rojo: #ff7676;
+    --rojoOscuro: #c20000;
+    --naranja: #ea9247;
+    --naranjaOscuro: #d2691e;
+
+    --degradado: linear-gradient(to right, #00bf63, #7ed957 );
+
+    --blanco: white;
+    --gris: rgb(167, 167, 167);
+    --negro: black;
+
+}
+
+
+/*----------Contenidos----------*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--fondo);
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    height: 100vh;
+}
+
+.container{
+    width: 100%; height: 100%;
+
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 10% 5% 2% 40% 2% auto 2% 10%;
+}
+
+.center{ text-align: center; }
+
+img{ width: 100%; height: 100%; }
+
+hr { border-color: var(--fondoOscuro); }
+
+a { text-decoration: none; }
+
+i{ cursor: pointer; }
+
+
+
+/*------------------------------------------------------------Ventanas modales para Movil------------------------------------------------------------*/
+
+
+.details{ word-break:break-all; }
+
+.adressInput{ display: none; }
+
+
+.modalInfoProduct{
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%; height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    color: black;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalInfoProductContent{
+    background-color: beige;
+    width: 50%;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+
+.modalBuyProduct{
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%; height: 100%;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    color: black;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalBuyProductContent{
+    background-color: var(--fondo);
+    width: 60%;
+    padding: 1rem;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+input, select{ height: 30px;}
+input, select, textarea{
+    background-color: var(--verdeBlanco);
+    border-color: var(--verdeClaro);
+    color: var(--negro);
+    border-radius: 5px;
+    width: 100%;
+    resize: none;
+}
+input:focus, select:focus, textarea:focus{ border: 3px solid var(--azulNeon); }
+
+.formProductButton{
+    color: var(--blanco);
+    background-color: var(--verde);
+    border-color: var(--verdeOscuro);
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 25%;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.formProductButton:focus{
+    background-color: var(--azulNeon);
+    border-color: var(--azul);
+    color: var(--negro);
+}
+
+#subtotal{
+    color: var(--rojoOscuro);
+}
+
+.alert{
+    background-color: var(--rojo);
+    color: var(--negro);
+}
+
+/*------------------------------------------------------------Resolución para Movil------------------------------------------------------------*/
+
+
+/*VENTANA MODAl para MENÚ en barra lateral*/
+.lateralNabvarModalWindow{
+    background-color: rgba(0, 0, 0, 0.45);
+    width: 100%; height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    color: black;
+    display: none;
+    justify-content: start;
+    align-items: stretch;
+
+    grid-area: 1 / 1 / 4 / 4;
+}
+
+.lateralNavbarModalContent{
+    background-color: var(--negro);
+    color: var(--blanco);
+    width: 60%;
+    border-radius: 5px;
+    padding: 20px;
+
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 5% 25% 70%;
+}
+.lateralNabvarButtons{
+    grid-area: 2 / 1 / 3 / 4;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#closeLateralNavbar{
+    font-size: xx-large;
+    cursor: pointer;
+    grid-area: 1 / 1 / 2 / 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lateralNabvarButtons div a{
+    color: var(--verdeNeonOscuro);
+    font-weight: bolder;
+    width: 100%;
+}
+.lateralNabvarButtons div a:hover, .lateralNabvarButtons form button:hover{
+    color: var(--azulNeon);
+}
+
+.lateralNabvarButtons form button{
+    background-color: black;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    color: var(--verdeNeonOscuro);
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+
+
+
+/*----------Navbar----------*/
+
+.navbar .navbarButtons{ visibility: hidden;}
+.navbar .logoText{ 
+    color: var(--blanco);
+    text-align: right;
+    margin-right: 10px;
+    grid-area: 1 / 3 / 2 / 4; 
+    display: flex;
+    align-items: center;
+}
+
+.navbar{
+    background-color: var(--negro);
+    color: var(--blanco);
+
+    grid-area: 1 / 1 / 2 / 4;
+
+    display: grid;
+    grid-template-columns: 5% 20% 50% 20% 5%;
+    grid-template-rows: 100%;
+}
+
+.burgerButton{
+    font-size: 3rem;
+    text-align: center;
+    padding-top: 20%;
+
+    grid-area: 1 / 2 / 2 / 3;
+    cursor: pointer;
+}
+
+.headerLogo{ grid-area: 1 / 4 / 2 / 5;}
+
+
+
+/*----------Navbar 2----------*/
+
+.navbar2{
+    background-color: var(--verde);
+
+    grid-area: 2 / 1 / 3 / 4;;
+}
+
+
+
+/*----------Sobre el producto----------*/
+
+.productDetails{
+    width: 100%; height: 100%;
+
+    grid-area: 4 / 2 / 5 / 3;
+
+    display: grid;
+    grid-template-rows: 10% 2% 67% 2% 7% 2% 10%;
+    grid-template-columns: 10% 37.5% 5% 37% 10%;
+}
+
+.productDetails .description{
+    visibility: hidden;
+}
+
+.productTitle{ grid-area: 1 / 1 / 2 / 6; }
+
+.productImage{
+    background-color: var(--gris);
+    grid-area: 3 / 2 / 4 / 5;
+}
+
+.producPrice{
+    text-align: center;
+    grid-area: 5 / 2 / 6 / 5;
+}
+
+.price{ color: var(--rojo);}
+
+.buttonProduct{
+    background-color: var(--naranja);
+    color: var(--negro);
+    font-size: large;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    padding-top: 7.5%;
+    cursor: pointer;
+}
+
+.buttonProduct:hover{ background-color: var(--naranjaOscuro); }
+
+.button1{ grid-area: 7 / 2 / 8 / 3; }
+.button2{ grid-area: 7 / 4 / 8 / 5; }
+
+
+
+/*----------Otros productos----------*/
+
+.otherProducts{
+    grid-area: 6 / 2 / 7 / 3;
+
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 25px auto;
+}
+
+.otherProductsTitle{ grid-area: 1 / 1 / 2 / 2; }
+
+.cardsContainer{
+    grid-area: 3 / 1 / 4 / 2;
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+.card{
+    background-color: var(--verde);
+    color: var(--blanco);
+    border-radius: 5px;
+    width: 136px;
+    height: 200px;
+    margin: 10px;
+
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 7% 10% 2% 50% 2% 10% 2% 10% 7%;
+}
+
+.cardTitle{
+    font-weight: bold;
+    font-size: large;
+    text-align: center;
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.cardImage{
+    background-color: var(--gris);
+    border-radius: 5px;
+    grid-area: 4 / 2 / 5 / 3;
+}
+
+.cardPrice{
+    color: var(--negro);
+    font-weight: bold;
+    text-align: center;
+    grid-area: 6 / 2 / 7 / 3;
+}
+
+.cardButton{
+    background-color: var(--naranja);
+    color: var(--negro);
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+
+    grid-area: 8 / 2 / 9 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cardButton:hover{ background-color: var(--naranjaOscuro); }
+
+
+/*----------Footer----------*/
+
+.footer{
+    background-color: var(--negro);
+    color: var(--blanco);
+    grid-area: 8 / 1 / 9 / 4;
+    display: grid;
+    grid-template-columns: 5% 20% 25% 25% 20% 5%;
+    grid-template-rows: 100%;
+}
+
+.buttonFoot{
+    background-color: var(--verdeNeonOscuro);
+    color: var(--negro);
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 30%;
+    margin-bottom: 30%;
+    padding-top: 10%;
+
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.footerTextLogo{ 
+    color: var(--degradado);
+    text-align: right; 
+    font-size: smaller;
+    padding-top: 25%;
+    grid-area: 1 / 4 / 2 / 5;
+}
+
+.footerLogo{ grid-area: 1 / 5 / 2 / 6; padding: 10%; }
+
+
+.notLogedSession{
+    grid-area: 2 / 2 / 4 / 3; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.notLogedSessionButton{
+    background-color: var(--rojo);
+    border: 2px solid var(--rojoOscuro);
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 10px;
+    margin-top: 20px;
+}
+.notLogedSessionButton a{color: var(--negro); }
+.notLogedSessionButton:hover{ background-color: var(--rojoOscuro); }
+.notLogedSessionButton a:hover{color: var(--blanco); }
+
+
+
+/*------------------------------------------------------------Resolución para PC------------------------------------------------------------*/
+@media screen and (min-width: 900px){
+    .container{
+        width: 100%; height: 100%;
+    
+        display: grid;
+        grid-template-columns: 10% 80% 10%;
+        grid-template-rows: 12% 7% 2% 40% 2% auto 2% 10%;
+    }
+
+    .navbar .burgerButton{ visibility: hidden;}
+    .navbar .navbarButtons{ visibility: visible; }
+
+    .navbar{
+        background-color: var(--negro);
+        color: var(--blanco);
+    
+        grid-area: 1 / 1 / 2 / 4;
+    
+        display: grid;
+        grid-template-rows: 20% 60% 20%;
+        grid-template-columns: 5% 40% 30% 15% 5% 5%;
+    }
+    
+
+    .navbarButtons{
+        color: var(--blanco);
+        grid-area: 2 / 2 / 3 / 3 ;
+    
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .navButton{
+        color: var(--blanco);
+        font-size: 1rem;
+    }
+    
+    .principalNavButton{
+        background-color: var(--verde);
+        border-radius: 5px;
+        padding: 10px;
+        padding-left: 20px; padding-right: 20px;
+    }
+
+    .navbarButtons form button{
+        background-color: var(--negro);
+        color: var(--blanco);
+        font-family: 'Roboto', sans-serif;
+        font-size: 1rem;
+        border: none;
+        cursor: pointer;
+    }
+
+    .principalNavButton:hover{ background-color: var(--azulNeon); color: var(--negro); }
+    
+    .specialNavButton{ color: var(--verdeNeonOscuro); }
+    .specialNavButton:hover{ color: var(--azulNeon); }
+    
+    
+    .navbar .logoText{
+        color: var(--blanco);
+        text-align: right;
+        margin-right: 1rem;
+        grid-area: 2 / 4 / 3 / 5 ;
+    }
+    
+    .headerLogo{ grid-area: 2 / 5 / 3 / 6; }
+
+
+
+
+    /*----------Sobre el producto----------*/
+    .productDetails{
+        display: grid;
+        grid-template-columns: 50% 22.5% 5% 22.5%;
+        grid-template-rows: 25px 5px 45% 5% 10% 5% 15% 5%;
+    }
+    .productDetails .description{
+        visibility: visible;
+    }
+
+    .productImage{
+        grid-area: 3 / 1 / 9 / 2;
+        width: 200px; height: 200px;
+        margin-left: 25%;
+    }
+
+    .buttonProduct{
+        padding: 0;
+    }
+    .description{ grid-area: 3 / 2 / 4 / 5; }
+    .producPrice{ grid-area: 5 / 2 / 6 / 5; }
+    .button1{ visibility: hidden; }
+    .button2{ grid-area: 7 / 2 / 8 / 5; padding-top: 8px;}
+
+
+
+    .modalBuyProductContent{
+        width: 30%;
+    }
+    .formProductButton{
+        margin-left: 35%;
+    }
+
+
+
+    /*----------Footer----------*/
+    .footer{
+        grid-template-rows: 15% 70% 15%;
+        grid-template-columns: 5% 10% 60% 15% 5% 5%;
+    }
+
+    .buttonFoot{
+        grid-area: 2 / 2 / 3 / 3;
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: var(--verdeNeonOscuro);
+        color: var(--negro); 
+        padding: 0.8rem;
+        margin: 0;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    .buttonFoot:hover{ background-color: var(--azulNeon);}
+    
+    .footerTextLogo{
+        grid-area: 2 / 4 / 3 / 5;
+        padding: 0%;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .footerLogo{ grid-area: 2 / 5 / 3 / 6; }
+}

@@ -1,0 +1,393 @@
+/*------------------------------Estilos Generales------------------------------*/
+
+/*----------Colores----------*/
+:root{
+    --fondo: #F4FFE3;
+    --fondoOscuro: #101F0D;
+    --verdeOscuro: #203d1a;
+    --verde: #407b33;
+    --verdeClaro: #779a6a;
+    --verdeBlanco: #caddbb;
+
+    --verdeNeonOscuro: #00BF63;
+
+    --azulNeon: #07F5CB;
+    --azul: dodgerblue;
+
+    --rojo: #ff7676;
+    --rojoOscuro: #c20000;
+
+    --naranja: #ea9247;
+    --naranjaOscuro: #d2691e;
+
+    --degradado: linear-gradient(to right, #00bf63, #7ed957 );
+
+    --blanco: white;
+    --gris: rgb(167, 167, 167);
+    --negro: black;
+
+}
+
+/*----------Contenidos----------*/
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--fondo);
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    height: 100vh;
+}
+
+.center{ text-align: center; }
+
+img{ width: 100%; height: 100%; }
+
+hr {
+    border-color: var(--fondoOscuro); 
+    width: 100%; height: 2px;
+}
+
+a { text-decoration: none; }
+
+
+/*----------Contenedores generales----------*/
+.container{
+    width: 100%; height: 100%;
+    display: grid;
+    grid-template-rows: 10% 5% 15% auto 10%;
+    grid-template-columns: 10% 80% 10%;
+}
+
+
+
+/*----------Encabezado----------*/
+.container header{
+    background-color: var(--negro);
+    color: var(--blanco);
+    grid-area: 1 / 1 / 2 / 4;
+    display: grid;
+    grid-template-rows: 100%;
+    grid-template-columns: 100%;
+}
+
+.clientNav{ grid-area: 1 / 1 / 2 / 2; display: none; }
+.NavMovile{
+    grid-area: 1 / 1 / 2 / 2;
+    display: grid;
+    grid-template-rows: 20% 60% 20%;
+    grid-template-columns: 5% 13% 14% 50% 13% 5%;
+}
+
+#burgerMenu{
+    font-size: xx-large;
+    cursor: pointer;
+    grid-area: 2 / 2 / 3 / 3 ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logoText{
+    text-align: right;
+    margin-right: 10px;
+    grid-area: 2 / 4 / 3 / 5;
+}
+.headerLogo{ grid-area: 2 / 5 / 3 / 6; }
+
+.greenNavbarGreen{
+    background-color: var(--verde);
+    grid-area: 2 / 1 / 3 / 4;
+}
+
+.errorNav{
+    grid-area: 1 / 1 / 2 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/*----------Banner / Carrusel----------*/
+
+.carousel{
+    background-color: var(--gris);
+    grid-area: 3 / 1 / 4 / 4;
+
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.texImgCarousel1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.texImgCarousel1 h2{
+    -webkit-text-stroke: 1px var(--negro);
+    color: var(--blanco); 
+}
+
+
+
+
+/*----------Cuerpo de página----------*/
+
+main{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    grid-area: 4 / 2 / 5 / 3;
+    
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.productsSection{
+    grid-area: 5 / 2 / 6 / 3;
+
+    display: grid;
+    grid-template-rows: 1.5rem 1px auto;
+    grid-template-columns: 100%;
+
+}
+
+
+/*----------Cards de Productos----------*/
+
+.cardsContainer{
+    grid-area: 4 / 1 / 5 / 2;
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    background-color: var(--verde);
+    color: var(--blanco);
+    border-radius: 5px;
+    text-align: center;
+    width: 130px; height: 210px;
+    margin: 10px; 
+    padding: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-content: space-around;
+}
+
+.card img{
+    background-color: var(--gris);
+    border-radius: 5px;
+    width: 100%;
+    height: 57%;
+}
+
+.cardPrice{
+    color: var(--negro);
+    font-weight: bold;
+}
+
+.cardButton{
+    background-color: var(--naranja);
+    color: var(--negro);
+    border: none;
+    border-radius: 5px;
+    padding: 5%;
+    cursor: pointer;
+}
+.cardButton:hover{ background-color: var(--naranjaOscuro); }
+
+
+/*----------Pie de página----------*/
+.container footer{
+    grid-area: 5 / 1 / 6 / 4;
+}
+
+footer{
+    background-color: var(--negro);
+    color: var(--blanco);
+
+    display: grid;
+    grid-template-rows: 20% 60% 20%;
+    grid-template-columns: 5% 13% 14% 50% 13% 5%;
+}
+
+.footerLogo{ grid-area: 2 / 5 / 3 / 6; }
+.footerLogoText{ 
+    text-align: right;
+    margin-right: 10px;
+    grid-area: 2 / 4 / 3 / 5; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footerButton{ 
+    background-color: var(--verdeNeonOscuro);
+    text-align: center;
+    border-radius: 5px;
+    grid-area: 2 / 2 / 3 / 4; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footerButton a{
+    color: black;
+}
+
+
+
+/*----------Ventanas Modales----------*/
+/*VENTANA MODAl para MENÚ en barra lateral*/
+.lateralNabvarModalWindow{
+    background-color: rgba(0, 0, 0, 0.45);
+    width: 100%; height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    color: black;
+    display: none;
+    justify-content: start;
+    align-items: stretch;
+
+    grid-area: 1 / 1 / 4 / 4;
+}
+
+.lateralNavbarModalContent{
+    background-color: var(--negro);
+    color: var(--blanco);
+    width: 60%;
+    border-radius: 5px;
+    padding: 20px;
+
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-template-rows: 5% 40% 55%;
+}
+.lateralNabvarButtons{
+    grid-area: 2 / 1 / 3 / 4;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#closeLateralNavbar{
+    font-size: xx-large;
+    cursor: pointer;
+    grid-area: 1 / 1 / 2 / 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lateralNabvarButtons div a{
+    color: var(--verdeNeonOscuro);
+    font-weight: bolder;
+    width: 100%;
+}
+.lateralNabvarButtons div a:hover, .lateralNabvarButtons form button:hover{
+    color: var(--azulNeon);
+}
+
+.lateralNabvarButtons form button{
+    background-color: black;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    color: var(--verdeNeonOscuro);
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+
+
+.notLogedSession{
+    height: 100vh;
+    grid-area: 2 / 2 / 4 / 3; 
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.notLogedSessionButton{
+    background-color: var(--rojo);
+    border: 2px solid var(--rojoOscuro);
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 10px;
+    margin-top: 20px;
+}
+.notLogedSessionButton a{color: var(--negro); }
+.notLogedSessionButton:hover{ background-color: var(--rojoOscuro); }
+.notLogedSessionButton a:hover{color: var(--blanco); }
+
+
+
+
+/*------------------------------------------------------------Resolución para PC------------------------------------------------------------*/
+@media screen and (min-width: 900px){
+    /*----------Contenedores generales----------*/
+    
+    .container{
+        grid-template-rows: 12% 7% 20% auto 12%;
+        grid-template-columns: 10% 80% 10%;
+    }
+
+
+
+    /*----------Navbar----------*/
+    .clientNav{ 
+        display: grid; 
+        grid-template-rows: 20% 60% 20%;
+        grid-template-columns: 5% 50% 20% 15% 5% 5%;
+    }
+    .NavMovile{ display: none; }
+
+    .navbarButtons{
+        grid-area: 2 / 2 / 3 / 3;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .navButton{
+        color: var(--blanco);
+        font-size: larger;
+    }
+    .principalNavButton{
+        background-color: var(--verde);
+        color: var(--blanco);
+        padding: 10px;
+        padding-left: 20px; padding-right: 20px;
+        border-radius: 5px;
+    }
+
+    .navbarButtons form button{
+        background-color: var(--negro);
+        color: var(--blanco);
+        font-family: 'Roboto', sans-serif;
+        border: none;
+        font-size: larger;
+        cursor: pointer;
+    }
+
+    .specialNavButton{  color: var(--verdeNeonOscuro); }
+    .specialNavButton:hover{ color: var(--azulNeon);}
+    .principalNavButton:hover{ color: var(--negro); background-color: var(--azulNeon); }
+
+
+
+    /*----------Pie de página----------*/
+    footer{ grid-template-columns: 5% 7% 68% 10% 5% 5%;}
+    .footerButton{ grid-area: 2 / 2 / 3 / 3; }
+}

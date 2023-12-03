@@ -1,0 +1,198 @@
+/*------------------------------Estilos Generales------------------------------*/
+
+/*----------Colores----------*/
+:root{
+    --fondo: #F4FFE3;
+    --fondoOscuro: #101F0D;
+    --verde: #407b33;
+    --verdeOscuro: #203d1a;
+    --verdeClaro: #779a6a;
+    --verdeBlanco: #caddbb;
+
+    --verdeNeonOscuro: #00BF63;
+
+    --azulNeon: #07F5CB;
+    --azul: dodgerblue;
+
+    --rojo: #ff7676;
+    --rojoOscuro: #c20000;
+    --naranja: #ea9247;
+    --naranjaOscuro: #d2691e;
+
+    --degradado: linear-gradient(to right, #00bf63, #7ed957 );
+
+    --blanco: white;
+    --gris: rgb(167, 167, 167);
+    --negro: black;
+
+}
+
+
+/*----------Contenidos----------*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: var(--fondo);
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    height: 100vh;
+}
+
+.container{
+    width: 100%; height: 100%;
+
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 7% 8% auto 15%;
+}
+
+.center{
+    text-align: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+img{ width: 100%; height: 100%; }
+
+hr { border-color: var(--fondoOscuro); }
+
+a { text-decoration: none; }
+
+i{ cursor: pointer; }
+
+
+
+/*Encabezado------------------------------*/
+header{
+    background-color: var(--negro);
+    color: var(--blanco);
+    border-radius: 5px;
+
+    grid-area: 2 / 2 / 3 / 3;
+
+    display: grid;
+    grid-template-columns: 3% 16% 4% 74% 3%;
+    grid-template-rows: 13% 74% 13%;
+}
+.logoHeader{ grid-area: 2 / 2 / 3 / 3; }
+.textHeader{ grid-area: 2 / 4 / 3 / 5; }
+
+
+/*Cuerpo y focumlario -------------------------*/
+main{
+    background-color: var(--fondoOscuro);
+    color: var(--blanco);
+    border-radius: 5px;
+    grid-area: 3 / 2 / 4 / 3;
+}
+
+form{ margin: 10%; }
+
+.div1{
+    display: grid;
+    grid-template-columns: 40% 5% 55%;
+}
+.div1-2{
+    grid-area: 1 / 3 / 2 / 4;
+    display: flex;
+    flex-direction: column;
+}
+
+.div2{margin-top: 10px;}
+.div2 div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.styledInput {
+    background-color: var(--verdeBlanco);
+    border-color: var(--verdeClaro);
+    border-radius: 5px;
+    height: 30px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+textarea{
+    background-color: var(--verdeBlanco);
+    border-color: var(--verdeClaro);
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.buttonForm{
+    background-color: var(--verdeClaro);
+    border-color: var(--verdeOscuro);
+    font-weight: bold;
+    border-radius: 5px;
+    height: 30px;
+    width: 70%;
+    cursor: pointer;
+}
+.cancelButton{
+    background-color: var(--rojo);
+    border: 2px solid var(--rojoOscuro);
+    color: var(--negro);
+    border-radius: 5px;
+    padding: 3px;
+    width: 40%;
+}
+.cancel{ margin-top: -10px; margin-bottom: 10%; }
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------Resolución para PC------------------------------------------------------------*/
+
+@media screen and (min-width: 900px){
+    .container{
+        height: 100%;
+        grid-template-rows: 2% 10% 100%;
+        grid-template-columns: 20% 60% 20%;
+    }
+
+    header{
+        grid-template-columns: 31% 7% 1% 30% 31%;
+    }
+    main{ margin-bottom: 10%;}
+
+
+    form{
+        margin: 2%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .div1, .div2{ width: 100%; margin: 20px;}
+
+    .div1{
+        display: flex;
+        flex-direction: column;
+    }
+    .div1-2{ margin-top: 10px ;}
+
+    .imageDiv{
+        width: 70%;
+        margin-left: 15%;
+    }
+
+    
+    .buttonForm{ 
+        margin-left: -110%; 
+        margin-top: 10px;
+    }
+    .cancelButton{ width: 20%;}
+}
